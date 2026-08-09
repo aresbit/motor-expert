@@ -1,6 +1,6 @@
 # 电机学理论速查 (Theory Quick Reference)
 
-> 依据：`/home/ares/yyscode/cii-code/feiman/electric/docs/` 中文书（MIT 6.685 电机学）。
+> 依据：本技能内置 `references/electric-book/` 中文书（MIT 6.685 电机学，14 章 + 术语表）。
 > 完整推导见书中对应章节；本节只列诊断常用的核心关系。
 
 ## 1. 电磁力与力矩（ch00, ch03, ch06）

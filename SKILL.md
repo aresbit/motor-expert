@@ -19,15 +19,16 @@ description: >-
 
 ## 知识来源（先读再用）
 
-1. **电机学理论书**（权威理论依据）：`/home/ares/yyscode/cii-code/feiman/electric/docs/`
+1. **电机学理论书**（权威理论依据，已内置本技能）：`references/electric-book/`（MIT 6.685 电机学中文书全书 14 章 + 术语表，已随技能打包，无需外部路径）
    - `ch03_基础同步电机模型.md` — 同步电机相量、功率-功角
    - `ch06_永磁无刷直流电机.md` — BLDC/PMSM dq0 模型、磁场定向、弱磁
    - `ch09_感应电机控制与仿真.md` — 磁场定向控制 (FOC)
    - `ch12_电机数据手册实战_DM-J4310-2EC.md` — **DM 电机数据手册、CAN 协议、寄存器、齿比/极对数/时间常数推导**
    - `ch13_达妙DM电机实战_DM_CAN.py与夹爪集成.md` — **DM_CAN.py 逐段精解、MIT 位打包、反馈解码、夹爪集成**
    - 其他章节（磁路、绕组电感、涡流损耗）在涉及磁饱和、损耗、发热时查阅。
-2. **驱动代码**：`/home/ares/yyscode/TARS-DEMO/tactile_umi/gripper/DM_CAN.py`（以及 `gripper_control.py`、`gripper_pos_control.py`、`gripper_teleop*.py`、`data_process/replay.py`）。
-3. **本技能的速查表**：先读 `references/dm-motor-quickref.md`（DM 电机协议/错误码/寄存器/常见故障与修复对照），再读 `references/diagnosis-workflow.md`（完整诊断方法论），理论公式查 `references/theory-quickref.md`。
+   - 术语对照查 `glossary.md`。
+2. **驱动代码**（用户现场提供；典型位置 `/home/ares/yyscode/TARS-DEMO/tactile_umi/gripper/DM_CAN.py` 及 `gripper_control.py`、`gripper_pos_control.py`、`gripper_teleop*.py`、`data_process/replay.py`）。若用户未给代码路径，按日志推断或请用户提供。
+3. **本技能的速查表**：先读 `references/dm-motor-quickref.md`（DM 电机协议/错误码/寄存器/常见故障与修复对照），再读 `references/diagnosis-workflow.md`（完整诊断方法论），理论公式查 `references/theory-quickref.md`（其理论速查与 `references/electric-book/` 对应章节配套）。
 
 ## 诊断工作流（必须按此顺序）
 

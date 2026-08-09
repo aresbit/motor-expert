@@ -1,7 +1,6 @@
 # DM 电机速查表 (DM Motor Quick Reference)
 
-> 依据：DM-J4310-2EC 官方手册（`electric/raw_texts/DM-J4310-2EC.txt`）、`DM_CAN.py`、书中第 12–13 章。
-> 详细推导见书中 `ch12`（数据手册）与 `ch13`（DM_CAN.py 精解）。
+> 依据：DM-J4310-2EC 官方手册、`DM_CAN.py`、本技能内置书 `references/electric-book/ch12_电机数据手册实战_DM-J4310-2EC.md` 与 `references/electric-book/ch13_达妙DM电机实战_DM_CAN.py与夹爪集成.md`。
 
 ## 常用机型与限位参数
 

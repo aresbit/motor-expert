@@ -1,0 +1,26 @@
+{
+  "skill_name": "motor-expert",
+  "evals": [
+    {
+      "id": 1,
+      "name": "communication-loss",
+      "prompt": "我们产线的汽车线束插接机器人夹爪经常在插接过程中途掉电——日志里报 ERR=0xD 通讯丢失，电机自动失能，插接失败后重试又偶尔成功。这是夹爪电机的驱动代码和现场日志，帮我定位根因并修复代码。",
+      "expected_output": "诊断报告：识别出通讯丢失(ERR=D)根因，给出修复（如提高TIMEOUT、检查CAN链路、波特率/ID核对、enable时机等），并对代码给出具体修改。",
+      "files": ["eval-1-communication-loss/inputs/plug_log.txt", "eval-1-communication-loss/inputs/gripper_control.py", "_shared/DM_CAN.py"]
+    },
+    {
+      "id": 2,
+      "name": "stall-torque-limit",
+      "prompt": "汽车线束插接机器人夹爪合不上：插接时电机力矩顶到接近 TMAX(10Nm) 但位置一直到不了目标，最后报 ERR=0xA 过电流。这是代码和日志，帮我分析为什么力矩饱和、位置不到，并修复代码。",
+      "expected_output": "诊断报告：识别出堵转/过载(ERR=A)根因（力矩饱和、Kp不足或TMAX/机械问题），给出修复（调TMAX、Kp、检查机械/插接力需求），并对代码给出具体修改。",
+      "files": ["eval-2-stall-torque-limit/inputs/plug_log.txt", "_shared/gripper_pos_control.py", "_shared/DM_CAN.py"]
+    },
+    {
+      "id": 3,
+      "name": "position-accuracy",
+      "prompt": "汽车线束插接机器人夹爪定位精度不达标：目标位置 0.50 rad，实际终态误差 ±0.015 rad，超出 0.005 rad 的规格，而且能看到位置在目标附近小幅振荡。这是代码和日志，帮我分析位置不准+振荡的根因并修复代码。",
+      "expected_output": "诊断报告：识别出位置精度/振荡根因（Kp/Kd 增益、阻尼、量化/编码器、零点），给出修复（调Kp/Kd、设零点、阻尼），并对代码给出具体修改。",
+      "files": ["eval-3-position-accuracy/inputs/plug_log.txt", "_shared/DM_CAN.py"]
+    }
+  ]
+}
